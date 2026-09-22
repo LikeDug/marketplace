@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+</head>
+<body>
+    <h1>Каталог товаров</h1>
+
+    {% for product in products %}
+        <article>
+            <h2>{{ product.name }}</h2>
+            <p>Категория: {{ product.category.name }}</p>
+            <p>{{ product.description }}</p>
+            <strong>Цена: {{ product.price }} ₸</strong>
+        </article>
+        <hr>
+    {% empty %}
+        <p>Товаров пока нет.</p>
+    {% endfor %}
+</body>
+</html>
